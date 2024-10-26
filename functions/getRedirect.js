@@ -10,14 +10,13 @@ exports.handler = async () => {
     // Fetch the latest redirect document
     const result = await client.query(
       q.Map(
-        q.Paginate(q.Documents(q.Collection("redirects")), { size: 1 }),
+        q.Paginate(q.Documents(q.Collection("Redirects")), { size: 1 }),
         q.Lambda("ref", q.Get(q.Var("ref")))
       )
     );
 
     // Check if any redirect exists
     const redirectData = result.data.length > 0 ? result.data[0].data.url : null;
-    console.log(redirectData);
 
     if (redirectData) {
       return {

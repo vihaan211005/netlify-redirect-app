@@ -17,6 +17,7 @@ exports.handler = async () => {
 
     // Check if any redirect exists
     const redirectData = result.data.length > 0 ? result.data[0].data.url : null;
+    console.log(redirectData);
 
     if (redirectData) {
       return {

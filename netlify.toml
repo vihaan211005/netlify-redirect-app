@@ -3,6 +3,11 @@
   functions = "functions"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/"
+  to = "/.netlify/functions/getRedirect"
+  status = 200
+
+[[redirects]]
+  from = "/set"
+  to = "/.netlify/functions/setRedirect"
   status = 200

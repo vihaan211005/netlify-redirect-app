@@ -1,31 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirect App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirect Service</title>
 </head>
 <body>
-    <script>
-        // Parse the "url" query parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const targetUrl = urlParams.get("url");
-
-        if (targetUrl) {
-            // Store the URL via the Netlify Function
-            fetch('/.netlify/functions/storeRedirect', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ url: targetUrl })
-            })
-            .then(() => {
-                // Redirect to the target URL
-                window.location.href = targetUrl;
-            })
-            .catch(err => console.error("Error storing URL:", err));
-        } else {
-            document.body.innerHTML = "<p>No URL provided. Append ?url=your-redirect-url to the URL.</p>";
-        }
-    </script>
+  <h1>Welcome to the Redirect Service</h1>
+  <p>Redirecting you shortly...</p>
 </body>
 </html>

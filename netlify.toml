@@ -3,7 +3,7 @@
   functions = "functions"
 
 [[redirects]]
-  from = "/"
+  from = "/get"
   to = "/.netlify/functions/getRedirect"
   status = 200
 
